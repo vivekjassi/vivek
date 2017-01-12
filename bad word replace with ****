@@ -1,0 +1,20 @@
+package vj;
+
+public class Replace
+{
+	 public static void main(String... args) 
+	 {
+	        String s = "stupid, nonsense and  rascal";
+	        System.out.println(s.replaceAll(badWords("stupid", "nonsense", "rascal"), "*"));
+	    }
+
+	    public static String badWords(String... words)
+	    {
+	        String re = "";
+	        for (String w : words)
+	            for (int i = 0; i < w.length(); i++)
+	                re += String.format("|((?<=%s)%s(?=%s))",
+	                        w.substring(0, i), w.charAt(i), w.substring(i + 1));
+	        return re.substring(1);
+	    }
+	}
