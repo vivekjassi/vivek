@@ -1,0 +1,12 @@
+package vj;
+public class Student {
+
+
+	public Student(int i, String name, int j) {
+   System.out.println("Student Id is :"+i);
+   System.out.println("Student Name is :"+name);
+   System.out.println("Student Name is :"+j);
+	}
+	
+	
+}
