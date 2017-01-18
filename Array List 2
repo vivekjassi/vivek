@@ -1,0 +1,25 @@
+package vj;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class Student2{ 
+public void accept()
+{
+	ArrayList<Student> list=new ArrayList <Student> ();
+	Student obj= new Student(1,"Chirag",89);
+	Student obj1= new Student(2,"Vivek",75);		
+	Student obj2= new Student(3,"XYZ",65);
+	Student obj3= new Student(4,"ABC",70);
+	Student obj4= new Student(5,"XXX",89);
+
+	
+	Iterator itr=list.iterator();
+	while(itr.hasNext()){
+		System.out.println(itr.next());
+	}
+}
+public static void main(String[] args)
+{
+	Student2 oo=new Student2();
+	oo.accept();
+}
+}
