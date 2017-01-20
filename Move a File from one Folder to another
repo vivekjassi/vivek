@@ -1,0 +1,13 @@
+package vj;
+
+import java.io.File;
+public class MoveFiletoanotherDirectory {
+public static void main(String[] args){
+File from = new File("D:/vj/Code.txt");
+File to = new File("D:/vj1/Code.txt");
+if (from.renameTo(to))
+System.out.println("Successfully Moved the file");
+else
+System.out.println("Error while moving the file");
+}
+}
