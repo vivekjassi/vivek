@@ -1,0 +1,13 @@
+package vj;
+
+import java.io.File;
+
+public class ListfilesinFolder {
+public static void main(String a[]){
+File file = new File("D:/vj/");
+File[] files = file.listFiles();
+for(File D: files){
+System.out.println(D.getName());
+}
+}
+}
