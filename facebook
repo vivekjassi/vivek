@@ -1,0 +1,35 @@
+package com.btes1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class Facebook {
+public void run() throws InterruptedException
+{
+	WebDriver driver=new FirefoxDriver();
+	driver.get("https://www.facebook.com");
+	driver.manage().window().maximize();
+	driver.findElement(By.id("u_0_1")).sendKeys("Vivek");
+	driver.findElement(By.id("u_0_3")).sendKeys("Jassi");
+	driver.findElement(By.id("u_0_6")).sendKeys("name");
+	driver.findElement(By.id("u_0_9")).sendKeys("Vivek");
+	Thread.sleep(7000);
+	driver.findElement(By.id("u_0_b")).sendKeys("Vivek@123");
+	driver.findElement(By.id("day")).sendKeys("20");
+	driver.findElement(By.id("month")).sendKeys("Oct");
+	driver.findElement(By.id("year")).sendKeys("1993");
+	driver.findElement(By.id("u_0_j")).sendKeys("Male");
+	driver.findElement(By.id("u_0_f")).click();
+//	driver.close();
+
+}
+
+	public static void main(String[] args) throws InterruptedException
+	{
+	Facebook obj=new Facebook();
+	obj.run();
+	}
+
+}
+  
