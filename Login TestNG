@@ -1,0 +1,64 @@
+package project;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Project1 {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver","E:/vj/chromedriver.exe");
+		 WebDriver drive =new ChromeDriver();
+drive.get("http://demo.nopcommerce.com");
+drive.manage().window().maximize();
+drive.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//login
+drive.findElement(By.xpath("html/body/div[5]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")).click();
+
+Thread.sleep(5000);
+drive.findElement(By.id("Email")).sendKeys("abcd@gmail.com");
+Thread.sleep(7000);
+
+drive.findElement(By.id("Password")).sendKeys("123456");
+drive.findElement(By.id("RememberMe")).click();
+	
+
+drive.findElement(By.xpath("html/body/div[5]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/input")).click();
+	Thread.sleep(10000);
+	drive.findElement(By.xpath("//a[@href='/register']")).click();
+	Thread.sleep(5000);
+	//personnel info next page
+
+	drive.findElement(By.id("gender-male")).click();
+	drive.findElement(By.id("FirstName")).sendKeys("Vivek");
+	drive.findElement(By.id("LastName")).sendKeys("Jassi");
+
+	drive.findElement(By.xpath("html/body/div[5]/div[3]/div/div/form/div/div[2]/div[1]/div[2]/div[4]/select[1]")).sendKeys("20");
+	drive.findElement(By.xpath("html/body/div[5]/div[3]/div/div/form/div/div[2]/div[1]/div[2]/div[4]/select[2]")).sendKeys("April");
+	drive.findElement(By.xpath("html/body/div[5]/div[3]/div/div/form/div/div[2]/div[1]/div[2]/div[4]/select[3]")).sendKeys("2000");
+
+	drive.findElement(By.id("Email")).sendKeys("vj@abc.com");
+
+	//Company Details
+	drive.findElement(By.id("Company")).sendKeys("BTES");
+	//News Letter
+	drive.findElement(By.id("Newsletter")).click();
+	//Password
+	
+	Thread.sleep(5000);
+	drive.findElement(By.id("Password")).sendKeys("Vivekjassi");
+	drive.findElement(By.id("ConfirmPassword")).sendKeys("Vivekjassi");
+	
+	//Register      
+	drive.findElement(By.id("register-button")).click();
+	//Your registration completed
+	drive.findElement(By.xpath("html/body/div[5]/div[3]/div/div/form/div/div[2]/div[1]/div[2]/div[4]/select[3]")).click();
+	//logout
+	drive.findElement(By.xpath("html/body/div[5]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")).click();
+	
+	
+}
+}
